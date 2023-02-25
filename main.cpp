@@ -3,7 +3,7 @@
     \brief Simulatore di gare di kayt-snowboard
     \author D'Ambrosio Davide
     \date 21/02/2023
-    \version 1.0
+    \version 1.1
 */
 #include <iostream>
 #include <fstream>
@@ -34,7 +34,7 @@ struct competitor{
     \fn write_original_file
     \param[in] vet Vettore contenente tutti i competitori
     \param[in] write Variabile per capire se la funzione deve resettare il file o scrivere i dati aggiornati
-    \brief Metodo che serve ad aggiornare o resettare il filez
+    \brief Metodo che serve ad aggiornare o resettare il file
 */
 void write_original_file(vector<competitor> vet, bool write){
     ofstream fout("list.txt");
@@ -57,7 +57,7 @@ void write_original_file(vector<competitor> vet, bool write){
             fout<<vet.at(i).cog<<"; ";
             fout<<vet.at(i).x<<"; ";
             fout<<vet.at(i).y<<"; ";
-            if(i != vet.size()-1)
+            if(i != vet.size() - 1)
                 fout<<vet.at(i).distance<<";"<<'\n';
             else
                 fout<<vet.at(i).distance<<";";
@@ -172,20 +172,25 @@ void generate_position(vector<competitor>& vet){
     \param[in] start Variabile che indica se la gara è iniziata o meno
     \brief Metodo che serve a decretare il podio
 */
-void podium(vector<competitor> vet, bool start){
-    if(start) {
+void podium(vector<competitor> vet){
         vector<competitor> podio;
-        for (int i = 0; i < 3; i++) {
+        cout<<endl<<"--- PODIO ---"<<endl;
+        int lim = vet.size(), i;
+        if(lim >= 3 && lim <5)
+            i = 3;
+        else if(lim >= 5 && lim <10)
+            i = 5;
+        else
+            i = 10;
+        for (int q = 0; q < i; q++) {
             competitor c = vet.at(first(vet));
             vet.erase(vet.begin() + first(vet));
             podio.push_back(c);
-            cout << endl << "Al " << i + 1 << " posto abbiamo: " << podio.at(i).cog << " con una distanza percorsa di "
-                 << podio.at(i).distance << endl;
+            if(q == 3)
+                cout<<endl<<"--- POSIZIONI FUORI DAL PODIO ---"<<endl;
+            cout << endl << "Al " << q + 1 << " posto abbiamo: " << podio.at(q).cog << " con una distanza percorsa di "
+                 << podio.at(q).distance << endl;
         }
-    }
-    else{
-        cout<<endl<<"Devi iniziare una gara per vedere il podio!"<<endl;
-    }
 }
 
 /*!
@@ -207,10 +212,15 @@ void new_race(vector<competitor>& vet, bool &start){
     start = true;
 }
 
-void end_race(vector<competitor>& vet, bool &start){
-    podium(vet, start);
+void end_race(vector<competitor>& vet, bool &start) {
+    if (start) {
+    podium(vet);
     bool write = true;
     write_original_file(vet, write);
+    }
+    else{
+        cout<<endl<<"Devi iniziare una gara per vedere il podio!"<<endl;
+    }
 }
 
 //! \brief Metodo che serve a stampare il file
@@ -256,7 +266,7 @@ void menu()
                 cout<<endl<<"Uscita..."<<endl;
                 break;
             default:
-                cout << endl << "Scelta sbagliata" << endl << endl;
+                cout << endl << "Scelta sbagliata" << endl;
         }
     } while (sc != 4);
 }
