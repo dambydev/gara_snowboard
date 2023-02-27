@@ -21,30 +21,22 @@ struct \mbox{\hyperlink{structcompetitor}{competitor}}
 \doxysubsection*{Funzioni}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{main_8cpp_ac1b1483357b8f42490e56d5ff0dcfbda}\label{main_8cpp_ac1b1483357b8f42490e56d5ff0dcfbda}} 
-void {\bfseries write\+\_\+original\+\_\+file} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ vet)
-\item 
-\mbox{\Hypertarget{main_8cpp_aff59343e7b637907d46fc53ab6cbdd56}\label{main_8cpp_aff59343e7b637907d46fc53ab6cbdd56}} 
-void {\bfseries write\+\_\+file} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ vet, vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ podio)
-\item 
-\mbox{\Hypertarget{main_8cpp_a4423eb298adb286a964ea4e111afbf5d}\label{main_8cpp_a4423eb298adb286a964ea4e111afbf5d}} 
-void {\bfseries full\+\_\+vet} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet)
-\item 
-\mbox{\Hypertarget{main_8cpp_a30adc2743a0a86d42992d3d3d0b6f99e}\label{main_8cpp_a30adc2743a0a86d42992d3d3d0b6f99e}} 
-int {\bfseries first} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ vet)
-\item 
-\mbox{\Hypertarget{main_8cpp_a3c34f1b0ecd2437df8a55d58438f3f87}\label{main_8cpp_a3c34f1b0ecd2437df8a55d58438f3f87}} 
-int {\bfseries distance} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet, int i, int x1, int y1)
-\item 
-\mbox{\Hypertarget{main_8cpp_a13a8731357a3912832832cbbb979aa63}\label{main_8cpp_a13a8731357a3912832832cbbb979aa63}} 
-void {\bfseries generate\+\_\+position} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet)
-\item 
-\mbox{\Hypertarget{main_8cpp_add0419f984c6fce8ffb5d013a6bbcda7}\label{main_8cpp_add0419f984c6fce8ffb5d013a6bbcda7}} 
-void {\bfseries podium} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ vet, bool start)
-\item 
-\mbox{\Hypertarget{main_8cpp_af139f2b2966cca478226b394c76957ce}\label{main_8cpp_af139f2b2966cca478226b394c76957ce}} 
-void {\bfseries new\+\_\+race} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet, bool \&start)
-\item 
+void \mbox{\hyperlink{main_8cpp_a8444ae52f04bcf9a4c54a26440cfea14}{write\+\_\+file}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ vet, bool write)
+\begin{DoxyCompactList}\small\item\em Metodo che serve ad aggiornare o resettare il file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4423eb298adb286a964ea4e111afbf5d}{full\+\_\+vet}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet)
+\begin{DoxyCompactList}\small\item\em Metodo che serve a riempire il vettore con i competitori. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a30adc2743a0a86d42992d3d3d0b6f99e}{first}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ vet)
+\begin{DoxyCompactList}\small\item\em Metodo che serve a decretare il primo posto tra i competitori contenuti nel vettore. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a3c34f1b0ecd2437df8a55d58438f3f87}{distance}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet, int i, int x1, int y1)
+\begin{DoxyCompactList}\small\item\em Metodo che ritorna il valore della distanza percorsa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a13a8731357a3912832832cbbb979aa63}{generate\+\_\+position}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet)
+\begin{DoxyCompactList}\small\item\em Metodo che serve a generare casualmente le posizioni x ed y per 30 volte e a impostare la distanza percorsa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a60835fb255cb44fdd2af58091ddf2c39}{podium}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ vet)
+\begin{DoxyCompactList}\small\item\em Metodo che serve a decretare il podio e nel caso le posizioni inferiori. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_af139f2b2966cca478226b394c76957ce}{new\+\_\+race}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet, bool \&start)
+\begin{DoxyCompactList}\small\item\em Metodo che serve a iniziare una nuova gara. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a01e1b7791d3e07d44196bb61c7c775fa}{end\+\_\+race}} (vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&vet, bool \&start)
+\begin{DoxyCompactList}\small\item\em Metodo che serve a far visualizzare il podio. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8cpp_ae65e415b05533e918663165b63ab657c}\label{main_8cpp_ae65e415b05533e918663165b63ab657c}} 
 void {\bfseries out\+\_\+file} ()
 \begin{DoxyCompactList}\small\item\em Metodo che serve a stampare il file. \end{DoxyCompactList}\item 
@@ -66,5 +58,152 @@ D\textquotesingle{}Ambrosio Davide
 21/02/2023 
 \end{DoxyDate}
 \begin{DoxyVersion}{Versione}
-1.\+0 
+1.\+1 
 \end{DoxyVersion}
+
+
+\doxysubsection{Documentazione delle funzioni}
+\mbox{\Hypertarget{main_8cpp_a3c34f1b0ecd2437df8a55d58438f3f87}\label{main_8cpp_a3c34f1b0ecd2437df8a55d58438f3f87}} 
+\index{main.cpp@{main.cpp}!distance@{distance}}
+\index{distance@{distance}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily int distance (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&}]{vet,  }\item[{int}]{i,  }\item[{int}]{x1,  }\item[{int}]{y1 }\end{DoxyParamCaption})}
+
+
+
+Metodo che ritorna il valore della distanza percorsa. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+{\em i} & Puntatore agli elementi del vettore \\
+\hline
+{\em x1} & Posizione x precedente del competitore \\
+\hline
+{\em y1} & Posizione y precedente del competitore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+Distanza percorsa 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a01e1b7791d3e07d44196bb61c7c775fa}\label{main_8cpp_a01e1b7791d3e07d44196bb61c7c775fa}} 
+\index{main.cpp@{main.cpp}!end\_race@{end\_race}}
+\index{end\_race@{end\_race}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{end\_race()}{end\_race()}}
+{\footnotesize\ttfamily void end\+\_\+race (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&}]{vet,  }\item[{bool \&}]{start }\end{DoxyParamCaption})}
+
+
+
+Metodo che serve a far visualizzare il podio. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+{\em start} & Variabile che indica se la gara è iniziata o meno \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_a30adc2743a0a86d42992d3d3d0b6f99e}\label{main_8cpp_a30adc2743a0a86d42992d3d3d0b6f99e}} 
+\index{main.cpp@{main.cpp}!first@{first}}
+\index{first@{first}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily int first (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$}]{vet }\end{DoxyParamCaption})}
+
+
+
+Metodo che serve a decretare il primo posto tra i competitori contenuti nel vettore. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+Puntatore alla posizione del vincitore nel vettore 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a4423eb298adb286a964ea4e111afbf5d}\label{main_8cpp_a4423eb298adb286a964ea4e111afbf5d}} 
+\index{main.cpp@{main.cpp}!full\_vet@{full\_vet}}
+\index{full\_vet@{full\_vet}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{full\_vet()}{full\_vet()}}
+{\footnotesize\ttfamily void full\+\_\+vet (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&}]{vet }\end{DoxyParamCaption})}
+
+
+
+Metodo che serve a riempire il vettore con i competitori. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_a13a8731357a3912832832cbbb979aa63}\label{main_8cpp_a13a8731357a3912832832cbbb979aa63}} 
+\index{main.cpp@{main.cpp}!generate\_position@{generate\_position}}
+\index{generate\_position@{generate\_position}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{generate\_position()}{generate\_position()}}
+{\footnotesize\ttfamily void generate\+\_\+position (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&}]{vet }\end{DoxyParamCaption})}
+
+
+
+Metodo che serve a generare casualmente le posizioni x ed y per 30 volte e a impostare la distanza percorsa. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_af139f2b2966cca478226b394c76957ce}\label{main_8cpp_af139f2b2966cca478226b394c76957ce}} 
+\index{main.cpp@{main.cpp}!new\_race@{new\_race}}
+\index{new\_race@{new\_race}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{new\_race()}{new\_race()}}
+{\footnotesize\ttfamily void new\+\_\+race (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$ \&}]{vet,  }\item[{bool \&}]{start }\end{DoxyParamCaption})}
+
+
+
+Metodo che serve a iniziare una nuova gara. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+{\em start} & Variabile che indica se la gara è iniziata o meno \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_a60835fb255cb44fdd2af58091ddf2c39}\label{main_8cpp_a60835fb255cb44fdd2af58091ddf2c39}} 
+\index{main.cpp@{main.cpp}!podium@{podium}}
+\index{podium@{podium}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{podium()}{podium()}}
+{\footnotesize\ttfamily void podium (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$}]{vet }\end{DoxyParamCaption})}
+
+
+
+Metodo che serve a decretare il podio e nel caso le posizioni inferiori. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+{\em start} & Variabile che indica se la gara è iniziata o meno \\
+\hline
+\end{DoxyParams}
+Vettore d\textquotesingle{}appoggio per la visualizzazione dei vincitori
+
+Metodo che serve per eliminare il vincitore nel vettore \char`\"{}vet\char`\"{}
+
+Metodo che serve per inserire un nuovo elemento nel vettore \char`\"{}podio\char`\"{}\mbox{\Hypertarget{main_8cpp_a8444ae52f04bcf9a4c54a26440cfea14}\label{main_8cpp_a8444ae52f04bcf9a4c54a26440cfea14}} 
+\index{main.cpp@{main.cpp}!write\_file@{write\_file}}
+\index{write\_file@{write\_file}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_file()}{write\_file()}}
+{\footnotesize\ttfamily void write\+\_\+file (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structcompetitor}{competitor}} $>$}]{vet,  }\item[{bool}]{write }\end{DoxyParamCaption})}
+
+
+
+Metodo che serve ad aggiornare o resettare il file. 
+
+
+\begin{DoxyParams}{Parametri}
+{\em vet} & Vettore contenente tutti i competitori \\
+\hline
+{\em write} & Variabile per capire se la funzione deve resettare il file o scrivere i dati aggiornati \\
+\hline
+\end{DoxyParams}

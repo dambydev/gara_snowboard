@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['out_5ffile_0',['out_file',['../main_8cpp.html#ae65e415b05533e918663165b63ab657c',1,'main.cpp']]]
+  ['gara_20kayt_20snowboard_0',['Gara kayt snowboard',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['generate_5fposition_1',['generate_position',['../main_8cpp.html#a13a8731357a3912832832cbbb979aa63',1,'main.cpp']]]
 ];

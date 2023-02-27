@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['new_5frace_0',['new_race',['../main_8cpp.html#af139f2b2966cca478226b394c76957ce',1,'main.cpp']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['menu_1',['menu',['../main_8cpp.html#a2a0e843767aeea4f433a28b9c54f573a',1,'main.cpp']]]
 ];

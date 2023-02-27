@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['descrizione_0',['DESCRIZIONE',['../index.html',1,'']]]
+  ['descrizione_20programma_0',['DESCRIZIONE PROGRAMMA',['../index.html',1,'']]]
 ];

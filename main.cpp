@@ -15,7 +15,7 @@
 #include <cmath>
 
 using namespace std;
-/*! \mainpage DESCRIZIONE
+/*! \mainpage DESCRIZIONE PROGRAMMA
  Traccia \n
  C'è un software che registra a distanza di un minuto le coordinate (GPS) di un Kayt-Snowborder.\n
  Dopo mezz'ora termina la registrazione. All'interno di un file sono elencati matricola, cognome e coordinate rilevate.\n
@@ -24,21 +24,50 @@ using namespace std;
  Le coordinate vanno generate tenendo conto di un piano cartesiano da 0,0 a 100,100.\n
  */
 
-//! \brief Struttura del competitore
+/*! \struct competitor
+    \brief Struttura del competitore
+ */
 struct competitor{
-    int matricola, x, y, distance;
+    /*!
+        \var matricola
+        \brief Id della competitore
+     */
+    int matricola;
+
+    /*!
+        \var x
+        \brief coordinata x
+     */
+    int x;
+
+    /*!
+        \var y
+        \brief coordinata y
+     */
+    int y;
+
+    /*!
+        \var distance
+        \brief distanza percorsa
+     */
+    int distance;
+
+    /*!
+        \var cog
+        \brief cognome del competitore
+     */
     string cog;
 };
 
 /*!
-    \fn write_original_file
-    \param[in] vet Vettore contenente tutti i competitori
-    \param[in] write Variabile per capire se la funzione deve resettare il file o scrivere i dati aggiornati
+    \param vet Vettore contenente tutti i competitori
+    \param write Variabile per capire se la funzione deve resettare il file o scrivere i dati aggiornati
     \brief Metodo che serve ad aggiornare o resettare il file
 */
-void write_original_file(vector<competitor> vet, bool write){
+void write_file(vector<competitor> vet, bool write){
     ofstream fout("list.txt");
     fout<<"";
+    //
     if(!write) {
         for (int i = 0; i < vet.size(); i++) {
             fout << vet.at(i).matricola << "; ";
@@ -52,22 +81,21 @@ void write_original_file(vector<competitor> vet, bool write){
         }
     }
     else{
-        for(int i=0; i<vet.size(); i++){
-            fout<<vet.at(i).matricola<<"; ";
-            fout<<vet.at(i).cog<<"; ";
-            fout<<vet.at(i).x<<"; ";
-            fout<<vet.at(i).y<<"; ";
+        for(int i = 0; i < vet.size(); i++){
+            fout << vet.at(i).matricola << "; ";
+            fout << vet.at(i).cog << "; ";
+            fout << vet.at(i).x << "; ";
+            fout << vet.at(i).y << "; ";
             if(i != vet.size() - 1)
-                fout<<vet.at(i).distance<<";"<<'\n';
+                fout << vet.at(i).distance << ";" << '\n';
             else
-                fout<<vet.at(i).distance<<";";
+                fout<<vet.at(i).distance <<     ";";
         }
     }
 }
 
 /*!
-    \fn full_vet
-    \param[in] vet Vettore contenente tutti i competitori
+    \param vet Vettore contenente tutti i competitori
     \brief Metodo che serve a riempire il vettore con i competitori
 */
 void full_vet(vector<competitor>& vet){
@@ -77,7 +105,7 @@ void full_vet(vector<competitor>& vet){
     string app;
     int q = 0;
     int i;
-    bool cont = false;
+    bool cont;
 
     while(!fin.eof()){
         competitor c;
@@ -113,15 +141,14 @@ void full_vet(vector<competitor>& vet){
 }
 
 /*!
-    \fn first
-    \param[in] vet Vettore contenente tutti i competitori
+    \param vet Vettore contenente tutti i competitori
     \brief Metodo che serve a decretare il primo posto tra i competitori contenuti nel vettore
     \result Puntatore alla posizione del vincitore nel vettore
 */
 int first(vector<competitor> vet){
     int k;
     for (int i = 0; i < vet.size(); i++){
-        if(i==0) {
+        if(i == 0) {
             if (vet.at(i).distance > vet.at(i + 1).distance)
                 k = i;
             else
@@ -137,11 +164,10 @@ int first(vector<competitor> vet){
 }
 
 /*!
-   \fn distance
-   \param[in] vet Vettore contenente tutti i competitori
-   \param[in] i Puntatore agli elementi del vettore
-   \param[in] x1 Posizione x precedente del competitore
-   \param[in] y1 Posizione y precedente del competitore
+   \param vet Vettore contenente tutti i competitori
+   \param i Puntatore agli elementi del vettore
+   \param x1 Posizione x precedente del competitore
+   \param y1 Posizione y precedente del competitore
    \brief Metodo che ritorna il valore della distanza percorsa
    \result Distanza percorsa
 */
@@ -150,9 +176,8 @@ int distance(vector<competitor>& vet, int i, int x1, int y1){
 }
 
 /*!
-    \fn generate_position
-    \param[in] vet Vettore contenente tutti i competitori
-    \brief Metodo che serve a generare casualmente le posizioni x ed y per 30 volte
+    \param vet Vettore contenente tutti i competitori
+    \brief Metodo che serve a generare casualmente le posizioni x ed y per 30 volte e a impostare la distanza percorsa
 */
 void generate_position(vector<competitor>& vet){
     for(int q = 0; q<30; q++) {
@@ -167,12 +192,12 @@ void generate_position(vector<competitor>& vet){
 }
 
 /*!
-    \fn podium
-    \param[in] vet Vettore contenente tutti i competitori
-    \param[in] start Variabile che indica se la gara è iniziata o meno
-    \brief Metodo che serve a decretare il podio
+    \param vet Vettore contenente tutti i competitori
+    \param start Variabile che indica se la gara è iniziata o meno
+    \brief Metodo che serve a decretare il podio e nel caso le posizioni inferiori
 */
 void podium(vector<competitor> vet){
+        //! \brief Vettore d'appoggio per la visualizzazione dei vincitori
         vector<competitor> podio;
         cout<<endl<<"--- PODIO ---"<<endl;
         int lim = vet.size(), i;
@@ -184,7 +209,9 @@ void podium(vector<competitor> vet){
             i = 10;
         for (int q = 0; q < i; q++) {
             competitor c = vet.at(first(vet));
+            //! \brief Metodo che serve per eliminare il vincitore nel vettore "vet"
             vet.erase(vet.begin() + first(vet));
+            //! \brief Metodo che serve per inserire un nuovo elemento nel vettore "podio"
             podio.push_back(c);
             if(q == 3)
                 cout<<endl<<"--- POSIZIONI FUORI DAL PODIO ---"<<endl;
@@ -194,9 +221,8 @@ void podium(vector<competitor> vet){
 }
 
 /*!
-    \fn new_race
-    \param[in] vet Vettore contenente tutti i competitori
-    \param[in] start Variabile che indica se la gara è iniziata o meno
+    \param vet Vettore contenente tutti i competitori
+    \param start Variabile che indica se la gara è iniziata o meno
     \brief Metodo che serve a iniziare una nuova gara
 */
 void new_race(vector<competitor>& vet, bool &start){
@@ -206,17 +232,22 @@ void new_race(vector<competitor>& vet, bool &start){
     vet.clear();
     full_vet(vet);
     bool write = false;
-    write_original_file(vet, write);
+    write_file(vet, write);
     generate_position(vet);
     cout<<endl<<"La gara e' iniziata!"<<endl;
     start = true;
 }
 
+/*!
+    \param vet Vettore contenente tutti i competitori
+    \param start Variabile che indica se la gara è iniziata o meno
+    \brief Metodo che serve a far visualizzare il podio
+*/
 void end_race(vector<competitor>& vet, bool &start) {
     if (start) {
     podium(vet);
     bool write = true;
-    write_original_file(vet, write);
+    write_file(vet, write);
     }
     else{
         cout<<endl<<"Devi iniziare una gara per vedere il podio!"<<endl;
